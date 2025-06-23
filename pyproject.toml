@@ -3,7 +3,7 @@ name = "wildvine-keys"
 version = "0.1.0"
 description = ""
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = "==3.12.8"
 dependencies = [
   "urllib3>=2.2.3",
   "frida==16.0.8",
@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 #[project.scripts]
-#hello = "hello_world:hello"
+#hello = "l3:l3"
 
 #[build-system]
 #requires = ["hatchling"]
