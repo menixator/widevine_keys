@@ -170,6 +170,7 @@
 
               in
               pkgs.mkShell {
+                name = projectName;
                 packages = [
                   virtualenv
                   pkgs.uv
