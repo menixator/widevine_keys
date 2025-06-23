@@ -5,14 +5,15 @@
 # Version: 2.1.0
 
 import base64, requests, sys, xmltodict
-import headers
+from . import headers
 # import cookies
 import json
-from cdm import cdm, deviceconfig
+
+from .cdm import cdm, deviceconfig
 from base64 import b64encode
-from getPSSH import get_pssh
-from wvdecryptcustom import WvDecrypt
-from cdm.formats import wv_proto2_pb2 as wv_proto2
+from .getPSSH import get_pssh
+from .wvdecryptcustom import WvDecrypt
+from .cdm.formats import wv_proto2_pb2 as wv_proto2
 from urllib.parse import urlparse
 import logging
 

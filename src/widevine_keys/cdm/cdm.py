@@ -7,9 +7,9 @@ import base64
 from google.protobuf.message import DecodeError
 from google.protobuf import text_format
 import hashlib
-from cdm.formats import wv_proto2_pb2 as wv_proto2
-from cdm.session import Session
-from cdm.key import Key
+from .formats import wv_proto2_pb2 as wv_proto2
+from .session import Session
+from .key import Key
 from Cryptodome.Random import get_random_bytes
 from Cryptodome.Random import random
 from Cryptodome.Cipher import PKCS1_OAEP, AES

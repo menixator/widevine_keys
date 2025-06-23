@@ -1,5 +1,5 @@
 [project]
-name = "wildvine-keys"
+name = "widevine-keys"
 version = "0.1.0"
 description = ""
 readme = "README.md"
@@ -18,11 +18,17 @@ dependencies = [
 ]
 
 [project.scripts]
-hello = "wildvine_keys:main"
+l3 = "widevine_keys:main"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+#[tool.hatch.build.targets.wheel]
+#ignore-vcs = true
+#include = [
+#  "src/widevine_keys"
+#]
 
 [dependency-groups]
 dev = [
