@@ -103,7 +103,7 @@
         apps = {
           default = {
             type = "app";
-            program = "${self.packages.x86_64-linux.default}/bin/l3";
+            program = "${self.packages.${system}.default}/bin/l3";
           };
         };
 
