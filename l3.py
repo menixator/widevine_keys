@@ -15,23 +15,6 @@ from wvdecryptcustom import WvDecrypt
 from cdm.formats import wv_proto2_pb2 as wv_proto2
 from urllib.parse import urlparse
 import logging
-# logging.basicConfig(level=logging.DEBUG)
-MDP_URL = input('\nInput MPD URL: ')
-lic_url = input('License URL: ')
-# hardcoded for kinopoisk.ru
-# lic_url = 'https://widevine-proxy.ott.yandex.ru/proxy'
-responses = []
-license_b64 = ''
-pssh = get_pssh(MDP_URL)
-params = None
-params = urlparse(lic_url).query
-# pssh = 'AAAAXHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAADwIARIQ7iYSc3cNGm7XKPe3hSn3MhoIdXNwLWNlbmMiGDdpWVNjM2NOR203WEtQZTNoU24zTWc9PSoAMgA='
-# params from mdp_url:
-# ottsession=5945048d6f844d1699054cc5d44548f1&
-# puid=339572866&
-# video_content_id=4315082489d87677b21f7c83593fcb73&
-
-print(f'{chr(10)}PSSH obtained.\n{pssh}')
 
 def WV_Function(pssh, lic_url, cert_b64=None):
 	"""main func, emulates license request and then decrypt obtained license
@@ -127,7 +110,28 @@ def WV_Function(pssh, lic_url, cert_b64=None):
 	if Correct:
 		return Correct, keyswvdecrypt   
 
-correct, keys = WV_Function(pssh, lic_url)
 
-for key in keys:
-	print('KID:KEY -> ' + key)
+def process():
+    # logging.basicConfig(level=logging.DEBUG)
+    MDP_URL = input('\nInput MPD URL: ')
+    lic_url = input('License URL: ')
+    # hardcoded for kinopoisk.ru
+    # lic_url = 'https://widevine-proxy.ott.yandex.ru/proxy'
+    responses = []
+    license_b64 = ''
+    pssh = get_pssh(MDP_URL)
+    params = None
+    params = urlparse(lic_url).query
+    # pssh = 'AAAAXHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAADwIARIQ7iYSc3cNGm7XKPe3hSn3MhoIdXNwLWNlbmMiGDdpWVNjM2NOR203WEtQZTNoU24zTWc9PSoAMgA='
+    # params from mdp_url:
+    # ottsession=5945048d6f844d1699054cc5d44548f1&
+    # puid=339572866&
+    # video_content_id=4315082489d87677b21f7c83593fcb73&
+
+    print(f'{chr(10)}PSSH obtained.\n{pssh}')
+
+    correct, keys = WV_Function(pssh, lic_url)
+
+    for key in keys:
+        print('KID:KEY -> ' + key)
+
