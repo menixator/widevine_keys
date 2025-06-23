@@ -166,6 +166,7 @@
             packages = [
               virtualenv
               pkgs.uv
+              pkgs.protobuf_29 # for protoc
             ];
 
             env = {
